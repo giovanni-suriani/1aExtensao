@@ -1,0 +1,92 @@
+{
+  "name": "betterCPPExtension",
+  "displayName": "betterCPP",
+  "description": "An extension to program faster in c++",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Extension Packs"
+  ],
+
+  "activationEvents": [
+    "onLanguage:python",
+    "onLanguage:json"
+],
+  "main": "./extension.js",
+  
+  "contributes": {
+    "menus": {
+      "editor/context": [
+        {
+          "command": "betterCPP.generateGetSetcpp",
+          "group": "navigation"
+         },
+         {
+          "command": "betterCPP.generateFunctionBodies",
+          "group": "navigation"
+         },
+         {
+          "command": "betterCPP.generateOpenGLProject",
+          "group": "navigation"
+         },
+         {
+          "command": "betterCPP.syncronizeFunctionDeclaration",
+          "group": "navigation"
+         }
+      ],
+      "explorer/context": [
+          {
+            "command": "betterCPP.createCplusplusClass",
+            "group": "navigation"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "betterCPP.createClass",
+        "title": "extension.createClass"
+      },
+      {
+        "command": "betterCPP.createCplusplusClass",
+        "title": "Create C++ Class!"
+      },
+      {
+        "command": "betterCPP.generateGetSetcpp",
+        "title": "Generate get and set"
+      },
+      {
+        "command": "betterCPP.generateFunctionBodies",
+        "title": "Generate function bodies"
+      },
+      {
+        "command": "betterCPP.generateProjectcpp",
+        "title": "Create New C++ Project"
+      },
+      {
+        "command": "betterCPP.generateOpenGLProject",
+        "title": "Create OpenGLProject"
+      },
+      {
+        "command": "betterCPP.syncronizeFunctionDeclaration",
+        "title": "Sync cpp and .h files!"
+      }
+    ]
+  },
+  
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.4",
+    "@vscode/test-electron": "^2.3.8"
+  }
+}
